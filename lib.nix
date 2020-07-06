@@ -129,7 +129,7 @@ rec
               removeAttrs cargotoml [ "bin" "example" "lib" "test" "bench" ];
           in
             attrs // lib.optionalAttrs (lib.hasAttr "package" attrs) {
-              package = removeAttrs attrs.package [ "build" ];
+              package = removeAttrs attrs.package [ "build" "default-run" ];
             };
 
         # a list of tuples from member to cargo toml:
